@@ -127,9 +127,9 @@ This public README intentionally avoids:
 - Internal usernames or staff names
 - Production URLs, API hosts, secrets, or environment variable values
 
-## Local Development
+## Example Local Development
 
-Create environment files from the provided examples, then start the backend and frontend services.
+Create environment files, then start the backend and frontend services.
 
 Backend:
 
@@ -149,7 +149,7 @@ npm run dev
 
 The frontend development server runs on the Vite default port unless configured otherwise.
 
-## Docker
+## Example Docker
 
 The project includes Docker configuration for running the app as containerized services.
 
