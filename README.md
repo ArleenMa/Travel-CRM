@@ -220,4 +220,3 @@ This public package intentionally omits:
 - Uploaded contracts, itineraries, invoices, recordings, and private links.
 - Financial figures and business-specific operational data.
 
-See [Data Privacy And Redaction Notes](./docs/PRIVACY_AND_REDACTION.md) for the checklist used before publishing.
