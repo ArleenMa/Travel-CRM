@@ -1,0 +1,17 @@
+sequenceDiagram
+    actor User
+    participant SPA as React SPA
+    participant API as FastAPI
+    participant Service as Domain Service
+    participant DB as Database
+
+    User->>SPA: Submit workflow action
+    SPA->>SPA: Validate form state
+    SPA->>API: Send authenticated request
+    API->>API: Validate token and schema
+    API->>Service: Execute domain operation
+    Service->>DB: Read or write records
+    DB-->>Service: Return result
+    Service-->>API: Return response model
+    API-->>SPA: JSON response
+    SPA-->>User: Refresh UI state

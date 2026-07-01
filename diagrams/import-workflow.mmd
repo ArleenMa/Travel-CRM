@@ -1,0 +1,11 @@
+flowchart TD
+    Upload["Upload CSV/XLSX"] --> Parse["Parse file"]
+    Parse --> Mapping["Map columns"]
+    Mapping --> Normalize["Normalize values"]
+    Normalize --> Validate["Validate rows"]
+    Validate --> Duplicates["Detect duplicates"]
+    Duplicates --> Preview["Preview row statuses"]
+    Preview --> Decision{"Confirm import?"}
+    Decision -->|No| Draft["Keep draft for review"]
+    Decision -->|Yes| Save["Persist approved records"]
+    Save --> Export["Optional verification export"]

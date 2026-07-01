@@ -1,0 +1,45 @@
+erDiagram
+    USER ||--o{ PERSON : creates_or_updates
+    USER ||--o{ TRIP : creates_or_updates
+    PERSON ||--o{ REGISTRATION : joins
+    TRIP ||--o{ REGISTRATION : includes
+    REGISTRATION ||--o{ CONTACT_LOG : has
+    REGISTRATION ||--o| CONTRACT_FILE : stores
+    TRIP ||--o| ITINERARY_FILE : stores
+
+    USER {
+        int id
+        string username
+        string role
+    }
+
+    PERSON {
+        int id
+        string profile_fields
+        string contact_fields
+        datetime deleted_at
+    }
+
+    TRIP {
+        int id
+        string route
+        string date_range
+        string operational_fields
+        datetime deleted_at
+    }
+
+    REGISTRATION {
+        int id
+        int person_id
+        int trip_id
+        string status
+        string trip_specific_fields
+        datetime deleted_at
+    }
+
+    CONTACT_LOG {
+        int id
+        int registration_id
+        string note
+        datetime created_at
+    }

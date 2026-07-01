@@ -1,0 +1,25 @@
+flowchart TB
+    Staff["Operations Staff"] --> Web["React SPA"]
+    Admin["Admin User"] --> Web
+    Web --> Router["Client Routing"]
+    Router --> Guards["Auth + Admin Guards"]
+    Guards --> APIClient["API Client"]
+    APIClient --> Proxy["Nginx Reverse Proxy"]
+    Proxy --> API["FastAPI REST API"]
+    API --> Services["Domain Services"]
+    Services --> ORM["SQLAlchemy ORM"]
+    ORM --> DB[("Relational Database")]
+    Services --> Uploads["Contract + Itinerary Storage"]
+
+    subgraph Frontend
+        Web
+        Router
+        Guards
+        APIClient
+    end
+
+    subgraph Backend
+        API
+        Services
+        ORM
+    end
